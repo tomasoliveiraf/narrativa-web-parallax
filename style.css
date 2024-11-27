@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: url('assets/bg.jpg');
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100% auto;
+    /* Ajuste do fundo */
+}
+
+
+/* botão som */
+
+.audio-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+}
+
+.audio-button img {
+    width: 100%;
+    height: auto;
+}
+
+.parallax-container {
+    position: relative;
+    height: calc(400vh + (20vh * número de grupos));
+    /* Altura para garantir espaço suficiente para o scroll */
+    overflow: hidden;
+    width: 100%;
+    /* Garantir que o container ocupa toda a largura */
+}
+
+.parallax-group {
+    overflow: visible;
+    /* Permite que as camadas se movam além do limite */
+    position: relative;
+    height: 100vh;
+    /* Cada grupo ocupa a altura da tela */
+    width: 100%;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Assegura que a imagem preenche a camada sem distorcer */
+    will-change: transform;
+}
+
+.layerA {
+    z-index: 1;
+    mix-blend-mode: multiply;
+    /* Fundo */
+}
+
+.layerB {
+    z-index: 2;
+    mix-blend-mode: multiply;
+    /* Intermediário */
+}
+
+.layerC {
+    z-index: 3;
+    /* Frente (sobreposta às outras) */
+}
+
+
+/* adicionar opacidade de forma gradual também */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Página de loading */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Assegura que o carregamento fique acima do conteúdo */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+
+/* Animação de rotação */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* O conteúdo principal começa invisível */
+
+#content {
+    display: none;
+}
