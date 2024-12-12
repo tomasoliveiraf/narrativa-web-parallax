@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Calcula a posição do grupo
                     const groupTop = group.offsetTop;
                     const groupHeight = group.offsetHeight;
-                    // Determina o progresso de rolagem dentro do grupo
+                    // Determina o scroll dentro do grupo
                     const scrollProgress = (scrollPosition - groupTop + viewportHeight / 2) / groupHeight;
                     // Aumenta o range de movimento
                     layerC.style.transform = `translateY(${scrollProgress * 150}px)`;
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Event listener para teclas de seta
+    // Teclas baixo/cima
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowDown') {
             event.preventDefault();
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const scrollTopButton = document.getElementById('scroll-top');
 
-    // Mostrar/esconder botão baseado na posição de scroll
+    // mostrar botão voltar ao topo
     window.addEventListener('scroll', () => {
         if (window.scrollY > window.innerHeight) {
             scrollTopButton.style.display = 'block';
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Função para voltar ao topo
+    // Função voltar ao topo
     scrollTopButton.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Áudio (mantido do seu script original)
+    // audio
     const audio = document.getElementById('background-audio');
     const audioButton = document.getElementById('audio-toggle');
     const audioIcon = document.getElementById('audio-icon');
@@ -141,6 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
         audioIcon.src = 'assets/volume-off.png';
     });
 
-    // Iniciar processo de loading
+    // Iniciar loading
     handleLoading();
 });

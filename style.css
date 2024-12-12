@@ -6,7 +6,6 @@ body {
     background-repeat: repeat-y;
     background-position: center;
     background-size: 100% auto;
-    /* Ajuste do fundo */
 }
 
 
@@ -35,7 +34,6 @@ body {
     /* Altura para garantir espaço suficiente para o scroll */
     overflow: hidden;
     width: 100%;
-    /* Garantir que o container ocupa toda a largura */
 }
 
 .parallax-group-title {
@@ -69,17 +67,14 @@ body {
 .layerA {
     z-index: 1;
     mix-blend-mode: multiply;
-    /* Fundo */
 }
 
 .layerB {
     z-index: 2;
-    /* Intermediário */
 }
 
 .layerC {
     z-index: 3;
-    /* Frente (sobreposta às outras) */
 }
 
 .scroll-arrow {
@@ -100,7 +95,7 @@ body {
 }
 
 
-/* adicionar opacidade de forma gradual também */
+/* adicionar opacidade de forma gradual */
 
 @keyframes fadeIn {
     0% {
@@ -112,7 +107,7 @@ body {
 }
 
 
-/* Página de loading */
+/* loading */
 
 #loading-screen {
     position: fixed;
@@ -125,7 +120,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    /* Assegura que o carregamento fique acima do conteúdo */
+    /* loading acima do conteúdo */
 }
 
 .spinner {
@@ -138,7 +133,7 @@ body {
 }
 
 
-/* Animação de rotação */
+/* Animação de rotação loading */
 
 @keyframes spin {
     0% {
@@ -150,11 +145,14 @@ body {
 }
 
 
-/* O conteúdo principal começa invisível */
+/* O conteúdo principal começa invisível com o loading */
 
 #content {
     display: none;
 }
+
+
+/* scroll */
 
 #scroll-top {
     position: fixed;
